@@ -1,0 +1,64 @@
+# Discord Bot Configuration
+discord:
+  token: "YOUR_DISCORD_BOT_TOKEN"  # Your Discord bot token
+  channel_ids:
+    serious_rss: 123456789012345678  # Channel ID for serious RSS articles
+    fun_rss: 123456789012345678      # Channel ID for fun RSS articles
+    serious_reddit: 123456789012345678  # Channel ID for serious Reddit posts
+    fun_reddit: 123456789012345678      # Channel ID for fun Reddit posts
+
+# RSS Feed Configuration
+rss:
+  # Serious articles configuration
+  serious:
+    schedule: "0 8-23/4 * * *"  # Cron schedule for serious articles (every 4 hours from 8am to 11pm)
+    feeds:
+      - name: "Example News"  # Display name for the feed
+        url: "https://example.com/rss"  # RSS feed URL
+      # Add more serious feeds as needed
+
+  # Fun articles configuration
+  fun:
+    schedule: "0 8-23 * * *"  # Cron schedule for fun articles (every hour from 8am to 11pm)
+    feeds:
+      - name: "Example Fun"  # Display name for the feed
+        url: "https://example.com/fun-rss"  # RSS feed URL
+      # Add more fun feeds as needed
+
+# Reddit Configuration
+reddit:
+  # Serious posts configuration
+  serious:
+    schedule: "0 */4 * * *"  # Cron schedule for serious posts (every 4 hours)
+    subreddits:
+      - name: "news"  # Subreddit name
+        icon: "📰"     # Custom icon for the subreddit
+      # Add more serious subreddits as needed
+
+  # Fun posts configuration
+  fun:
+    schedule: "0 * * * *"  # Cron schedule for fun posts (every hour)
+    subreddits:
+      - name: "funny"  # Subreddit name
+        icon: "😂"     # Custom icon for the subreddit
+      # Add more fun subreddits as needed
+
+# LLM Configuration
+llm:
+  api_key: "YOUR_LLM_API_KEY"  # Your LLM API key
+  model: "deepseek-chat"  # Model name to use
+  base_url: "https://api.deepseek.com/v1"  # API base URL
+  temperature: 0.7  # Temperature for response generation
+  max_tokens: 1000  # Maximum tokens for response
+  system_prompt: |
+    You are a helpful assistant that selects the most relevant news article based on key topics.
+    Consider the article's relevance, importance, and potential impact when making your selection.
+  key_topics:  # Topics to look for in articles
+    - "technology"
+    - "science"
+    - "environment"
+    - "health"
+    - "economy"
+    - "politics"
+    - "security"
+    - "innovation" 
