@@ -47,8 +47,7 @@ class NewsSharerBot:
         while True:
             try:
                 # Get both serious and fun articles from RSS
-                serious_articles, fun_articles = [], []
-                # serious_articles, fun_articles = await self.rss_service.check_feeds()
+                serious_articles, fun_articles = await self.rss_service.check_feeds()
                 
                 # Get both serious and fun posts from Reddit
                 serious_posts, fun_posts = await self.reddit_service.check_subreddits()
