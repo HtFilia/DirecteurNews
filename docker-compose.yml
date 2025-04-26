@@ -1,0 +1,9 @@
+services:
+  news-sharer:
+    build: .
+    container_name: news-sharer-bot
+    restart: unless-stopped
+    volumes:
+      - ./config:/app/config  # Mount config directory for persistent configuration
+    environment:
+      - TZ=UTC  # Set timezone
