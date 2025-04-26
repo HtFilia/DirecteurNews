@@ -25,4 +25,4 @@ RUN mkdir -p config
 ENV PYTHONUNBUFFERED=1
 
 # Command to run the bot
-CMD ["python", "-m", "src.bot.discord_bot"] 
+CMD ["python", "src/main.py"] 
